@@ -2,9 +2,6 @@
 # 4 nap, 1 part
 
 
-from os import remove
-
-
 def input_read(file_name):
     f = open(file_name, 'r')
     global pulled_number
@@ -39,7 +36,6 @@ def firts_task(list_of_matrixies):
 
 
 def matrix5x5(matrix):
-    i = 0
     del matrix[6-1::6]
     composite_list = [matrix[x:x+5] for x in range(0, len(matrix), 5)]
 
@@ -134,6 +130,7 @@ def second_task(list_of_matrixies):
 
             i = i+1
         j = j+1
+    print(choosen_matrix)
     return (sum_num(choosen_matrix)*last_num)
 
 
