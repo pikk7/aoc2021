@@ -12,15 +12,6 @@ def input_read(file_name):
         return rtm
 
 
-def firts_task(lines):
-    return lines
-# 3nap, 2 part
-
-
-def second_task(lines):
-    return lines
-
-
 def is_straight(coord):
     if(coord['start'][0] == coord['end'][0] or coord['start'][1] == coord['end'][1]):
         return True
@@ -28,8 +19,34 @@ def is_straight(coord):
         return False
 
 
+def firts_task(coords):
+    board = [[]]
+    for coord in coords:
+        x = int(coord['start'][0])
+        y = int(coord['start'][1])
+
+        endx = int(coord['end'][0])
+        endy = int(coord['end'][1])
+        while(x < endx and y < endy):
+
+            try:
+                board[x][y]+1
+            except:
+                board[x][y] = 0
+            if(x < endx):
+                x = x+1
+            if(y < endy):
+                y = y+1
+
+    return coords
+# 3nap, 2 part
+
+
+def second_task(lines):
+    return lines
+
+
 if __name__ == '__main__':
     input_data = input_read("example.txt")
-    print(input_data)
     print(firts_task(input_data))
-    print(second_task(input_data))
+    # print(second_task(input_data))
